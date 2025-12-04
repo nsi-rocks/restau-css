@@ -29,6 +29,23 @@ var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress;
 
 $(document).ready(function(){
 
+  // Gestion du toggle thème clair/sombre
+  const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  
+  // Charger le thème sauvegardé
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.classList.add('light-theme');
+  }
+  
+  // Gérer le clic sur le bouton de toggle
+  themeToggle.addEventListener('click', function() {
+    root.classList.toggle('light-theme');
+    const isLight = root.classList.contains('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
   $(".share-menu").on("click","a",function(){
 
     var type = $(this).attr("type");
@@ -513,7 +530,7 @@ function sendEvent(category, action, label){
 }
 
 function winGame(){
-  $(".table").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
+  $(".table").html('<span class="winner"><strong>Tu as réussi !</strong><br>Tu assures en CSS.</span>');
   addNametags();
   finished = true;
   resetTable();
@@ -630,7 +647,7 @@ function loadLevel(){
   loadBoard();
   resetTable();
 
-  $(".level-header .level-text").html("Level " + (currentLevel+1) + " of " + levels.length);
+  $(".level-header .level-text").html("Niveau " + (currentLevel+1) + " sur " + levels.length);
 
   updateProgressUI(currentLevel, checkCompleted(currentLevel));
 

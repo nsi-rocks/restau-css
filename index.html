@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Diner - Where we feast on CSS Selectors!</title>
+    <title>CSS Diner - Festin de sélecteurs CSS !</title>
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/restaurant.js" type="text/javascript" charset="utf-8"></script>
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/theme-overrides.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
     <meta property="og:url"           content="http://cssdiner.com" />
     <meta property="og:type"          content="website" />
@@ -24,28 +25,25 @@
     <div class="left-col">
 
       <header>
-        CSS Diner
+        Restau CSS
         <div class="logo">
           <plate><apple /></plate>
         </div>
-        <span class="share-menu">
-          Share
-          <a class="share-twitter" type="twitter" href="#"></a>
-          <a class="share-facebook" type="facebook" href="#"></a>
-          <a class="share-email" type="email" href="#"></a>
-        </span>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème" title="Basculer entre thème clair et sombre">
+          <span class="theme-toggle-icon"></span>
+        </button>
       </header>
 
       <h2 class="order"></h2>
 
       <div class="note">
-        <h3>No worries, you've got this!</h3>
+        <h3>Pas de souci, tu peux y arriver !</h3>
         <p>
-          You're about to learn CSS Selectors!
-          Selectors are how you pick which element to apply styles to.
+          Tu es sur le point d'apprendre les sélecteurs CSS !
+          Les sélecteurs permettent de choisir les éléments auxquels appliquer des styles.
         </p>
 
-        <h4>Exhibit 1 - A CSS Rule</h4>
+        <h4>Exemple 1 - Une règle CSS</h4>
 
         <pre>
 p {
@@ -53,21 +51,21 @@ p {
 }</pre>
 
         <p>
-          Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.
+          Ici, le "p" est le sélecteur (sélectionne tous les éléments &lt;p&gt;) et applique le style margin-bottom.
         </p>
         <p>
-          To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
+          Pour jouer, tape un sélecteur CSS dans l'éditeur ci-dessous pour sélectionner les bons éléments sur la table. Si tu as bon, tu passeras au niveau suivant.
         </p>
         <p>
-          Hover over the items on the table to see their HTML markup.
+          Survole les éléments sur la table pour voir leur balisage HTML.
         </p>
         <p>
-          Get help with selectors on the right! &rarr;
+          Obtiens de l'aide sur les sélecteurs à droite ! &rarr;
         </p>
-        <a class="note-toggle" href="#">Ok, got it!</a>
+        <a class="note-toggle" href="#">Ok, compris !</a>
       </div>
 
-      <a class="note-toggle" href="#">Help, I'm stuck!</a>
+      <a class="note-toggle" href="#">Aide, je suis bloqué !</a>
 
       <div class="game-wrapper">
         <div class="table-wrapper">
@@ -91,7 +89,7 @@ p {
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
             </div>
-              <input class="input-strobe" type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
+              <input class="input-strobe" type="text" placeholder="Tape un sélecteur CSS"/><span class="plus">+</span><div class="enter-button">entrée</div>
             <div>
             {<br/>
             /* Styles would go here. */<br/>
@@ -100,8 +98,8 @@ p {
             <div class="help">
               <br/>
               /* <br/>
-              Type a number to skip to a level.<br/>
-              Ex &rarr; "5" for level 5 <br/>*/
+              Tape un numéro pour aller à un niveau.<br/>
+              Ex &rarr; "5" pour le niveau 5 <br/>*/
             </div>
           </div>
         </div>
@@ -120,10 +118,10 @@ p {
 
       <div class="what-is-this">
         <p>
-          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!
+          Créé par <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; venez dire bonjour !
         </p>
         <p>
-          Have feedback or questions? Please file an issue on <a href="https://github.com/flukeout/css-diner/issues">the Github repo</a>.
+          Des retours ou des questions ? Ouvrez une issue sur <a href="https://github.com/flukeout/css-diner/issues">le dépôt Github</a>.
         </p>
       </div>
 
@@ -152,15 +150,15 @@ p {
           <h2 class="title"></h2>
           <h3 class="syntax"></h3>
           <div class="hint"></div>
-          <h4 class="examples-title">Examples</h4>
+          <h4 class="examples-title">Exemples</h4>
           <div class="examples"></div>
         </div>
       </div>
 
       <div class="level-menu">
-        <h2>Choose a level</h2>
+        <h2>Choisis un niveau</h2>
         <div class="levels"><!-- level links are inserted here--></div>
-        <a class="reset-progress" href="#">Reset Progress</a>
+        <a class="reset-progress" href="#">Réinitialiser la progression</a>
       </div>
 
       <div class="level-menu-toggle-wrapper">
